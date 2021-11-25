@@ -63,10 +63,10 @@ function updateCountValue() {
   }
   const { days, hours, minutes, seconds } = convertMs(difference);
 
-  daysEl.textContent = pad(days);
-  hoursEl.textContent = pad(hours);
-  minutesEl.textContent = pad(minutes);
-  secondsEl.textContent = pad(seconds);
+  daysEl.textContent = addLeadingZero(days);
+  hoursEl.textContent = addLeadingZero(hours);
+  minutesEl.textContent = addLeadingZero(minutes);
+  secondsEl.textContent = addLeadingZero(seconds);
 }
 
 // функция конвертации даты
@@ -90,6 +90,6 @@ function convertMs(ms) {
 }
 
 //Принимает число, приводит к строке и добавляет в начало 0 если число меньше 2-х знаков
-function pad(value) {
+function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
